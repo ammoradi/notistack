@@ -44,7 +44,7 @@ class SnackbarProvider extends Component {
      * @param {bool} options.preventDuplicate
      * @returns generated or user defined key referencing the new snackbar or null
      */
-    enqueueSnackbar = (message, { key, preventDuplicate, ...options } = {}) => {
+    enqueueSnackbar = ({message, key, preventDuplicate, ...options } = {}) => {
         const userSpecifiedKey = key || key === 0;
         const id = userSpecifiedKey ? key : new Date().getTime() + Math.random();
         const snack = {
